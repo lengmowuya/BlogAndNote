@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红宝书Object.Freeze()</title>
+</head>d
+<body>
+    <script>
+        let dog = {name:"小黑"}
+        let dog2 = {name:"大花"}
+        let obj = {name:"zhanglei",money:11000,dog,car:{name:"小白"}}
+        Object.freeze(obj);
+        obj.money += 200;
+        // 不会报错，静默失败
+        obj.dog.name="小蓝"
+        obj.car.name="大法拉利"
+        // Object.freeze不会冻结对象下的对象值，只会冻结指定对象下的所有子键值对。
+        console.log(obj);
+        obj.dog=dog2;
+        console.log(obj);
+    </script>
+</body>
+</html>
