@@ -13,7 +13,7 @@
 设置代理
 
 ```powershell
-git config --global http.proxy 'http://127.0.0.1:1089'
+git config --global http.proxy 'http://127.0.0.1:33210'
 ```
 
 取消代理
